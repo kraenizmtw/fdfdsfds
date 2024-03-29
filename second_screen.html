@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İkinci Sayfa</title>
+    <style>
+        body {
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b6536b57-5510-4bca-9d38-37e06a213834/de0vvf4-15e83faa-1b1c-4e34-8bc4-0d2db2533861.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I2NTM2YjU3LTU1MTAtNGJjYS05ZDM4LTM3ZTA2YTIxMzgzNFwvZGUwdnZmNC0xNWU4M2ZhYS0xYjFjLTRlMzQtOGJjNC0wZDJkYjI1MzM4NjEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Xkfh5wpYTif8s4VUDCrQ04qB6HgShtkB__laE9AAZE0');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        #heartButton {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 20px;
+            left: calc(50% - 50px); /* Orta hizalamak için */
+            z-index: 1; /* Arkaplan resminin üzerine gelmesini sağlar */
+        }
+
+        .heart {
+            background-color: #e74c3c; /* Kalp rengi */
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            animation: rise 1.5s ease-out; /* Animasyon ekleyin */
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: 0;
+                opacity: 1;
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Kalp butonu -->
+    <button id="heartButton" onclick="createHeart()">&#10084;</button>
+
+    <!-- İkinci ekrandaki yazı -->
+    <h1>SANA ÖLÜRÜM BEN BEBEK YÜZLÜ GÜZELİM</h1>
+
+    <script>
+        function createHeart() {
+            // Kalp balonu oluştur
+            var heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw"; // Rastgele yatay konum
+            document.body.appendChild(heart);
+
+            // Belirli bir süre sonra kalp balonunu kaldır
+            setTimeout(function() {
+                heart.remove();
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
