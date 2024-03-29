@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <style>
+        body {
+            /* Arkaplan resmini burada belirleyebilirsiniz */
+            background-image: url('https://e1.pxfuel.com/desktop-wallpaper/847/741/desktop-wallpaper-cars-3-driven-to-win-lightning-mcque-lightning-mcqueen-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* Diğer stil özelliklerini burada belirleyebilirsiniz */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px; /* Sayfanın yukarısından başlayacak şekilde ayarlayın */
+        }
+        #buttons {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s; /* Dönüşüm geçişini ayarla */
+        }
+        .button:hover {
+            transform: translateY(-5px); /* Mouse uzaklaştığında butonu yukarı kaydır */
+        }
+        #noButton {
+            background-color: #ff0000; /* Kırmızı renk */
+            color: #ffffff; /* Beyaz renk */
+        }
+        #yesButton {
+            background-color: #008000; /* Yeşil renk */
+            color: #ffffff; /* Beyaz renk */
+        }
+    </style>
+</head>
+<body>
+    <h1>BENİMLE YAŞLANIR MISIN GÜZELİM ?</h1>
+    <div id="buttons">
+        <!-- Evet ve Hayır butonları -->
+        <button id="yesButton" class="button" onclick="showSecondScreen()">Evet</button>
+        <button id="noButton" class="button" onclick="moveButtonAway()">Hayır</button>
+    </div>
+
+    <script>
+        function moveButtonAway() {
+            var button = document.getElementById("noButton");
+            var rect = button.getBoundingClientRect();
+            var newX = Math.random() * (window.innerWidth - rect.width);
+            var newY = Math.random() * (window.innerHeight - rect.height);
+            button.style.position = "absolute";
+            button.style.left = newX + "px";
+            button.style.top = newY + "px";
+        }
+
+        function showSecondScreen() {
+            window.location.href = "second_screen.html";
+        }
+    </script>
+</body>
+</html>
